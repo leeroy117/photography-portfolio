@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Mansory from "../../components/Mansory";
+
+const images = [
+    {
+        id: 1,
+        src: '/img/IMG_8532_difuminado_smaller.jpg',
+        srcSet: "/img/IMG_8532_difuminado_smaller.jpg 400w, /img/IMG_8532_difuminado_small.jpg 600w, /img/IMG_8532_difuminado_medium.jpg 1200w, /img/IMG_8532_difuminado_large.jpg 1920w"
+    },
+];
+
+const lang = 'en';
+---
+
+<Layout lang={lang}>
+	<div class="w-svw h-svh p-4">
+		 <Mansory images={images}  client:only="react" />
+	</div>
+</Layout>

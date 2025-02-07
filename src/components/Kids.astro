@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import Mansory from "./Mansory";
+import Title from "./Title.astro";
+import kidOne from '../assets/img/kids/IMG_9390-Editar_large.jpg';
+import kidTwo from '../assets/img/kids/IMG_9410-Editar.jpg';
+import kidThree from '../assets/img/kids/IMG_9412-2.jpg';
+import kidfour from '../assets/img/kids/IMG_9411_3.jpg';
+import kidfive from '../assets/img/kids/IMG_9373.jpg';
+import kidSix from '../assets/img/kids/IMG_9382-Editar-Editar-Editar.jpg';
+
+// const images = [
+//     {
+//         id: 1,
+//         src: '/img/kids/IMG_9390-Editar_large.jpg',
+//         srcSet: '',
+//     }
+// ]
+---
+<div class="p-4">
+    <Title title="Kids" />
+
+    <!-- <Mansory images={images} client:only="react" /> -->
+     <div class="grid grid-cols-2 gap-3">
+        <Image 
+            class={'object-cover w-full h-full'} 
+            src={kidOne} 
+            sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 800px"
+            alt="A description of my image." 
+        />
+
+        <Image 
+            class={'object-cover w-full h-full'} 
+            src={kidTwo} 
+            sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 800px"
+            alt="A description of my image." 
+        />
+
+        <Image 
+            class={'object-cover w-full h-full'} 
+            src={kidThree} 
+            sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 800px"
+            alt="A description of my image." 
+        />
+
+        <Image 
+            class={'object-cover w-full h-full'} 
+            src={kidfour} 
+            sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 800px"
+            alt="A description of my image." 
+        />
+
+        <Image 
+            class={'object-cover w-full h-full'} 
+            src={kidfive} 
+            sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 800px"
+            alt="A description of my image." 
+        />
+
+        <Image 
+            class={'object-cover w-full h-full'} 
+            src={kidSix} 
+            sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 800px"
+            alt="A description of my image." 
+        />
+     </div>
+</div>

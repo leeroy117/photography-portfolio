@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+import Title from '../../../../components/Title.astro';
+import Layout from '../../../../layouts/Layout.astro';
+import { kindOfPictures } from '../index.astro';
+import imagePortrait from '../../../../../public/img/portrait/IMG_9390-Editar_large.jpg'
+import Kids from '../../../../components/Kids.astro';
+import Portrait from '../../../../components/Portrait.astro';
+
+export function getStaticPaths() {
+    const staticRoutes = kindOfPictures.map((kind) => ({
+        params: {category: kind.category}
+    }));
+    console.log("🚀 ~ getStaticPaths ~ categories:", staticRoutes)
+
+    return staticRoutes;
+}
+
+const { category } = Astro.params;
+
+
+// const objCategory = kindOfPictures.find((kind) => category === kind.category);
+console.log("🚀 ~ category:", category)
+---
+<Layout>
+    {(category == 'kids') ? <Kids />  : ''}
+    {(category == 'macro') ? <Kids /> : ''}
+    {(category == 'portrait') ? <Portrait /> : ''}
+    {(category == 'wedding') ? <Kids /> : ''}
+</Layout>

@@ -1,0 +1,73 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { Image } from 'astro:assets';
+import portraitImg from '../../../assets/img/portrait/IMG_8532_difuminado_large.jpg';
+import kidsImg from '../../../assets/img/kids/IMG_9390-Editar_large.jpg';
+import macroImg from '../../../assets/img/macro/IMG_8550_edit.jpg';
+import weddingImg from '../../../assets/img/wedding/IMG_0292.jpg';
+// import macroImg from '../../../assets/img/macro/IMG_8550_edit - copia.jpg';
+import Title from "../../../components/Title.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import { string } from "astro:schema";
+
+const lang = getLangFromUrl(Astro.url);
+console.log("🚀 ~ lang:", lang)
+const t = useTranslations(lang);
+console.log("🚀 ~ t:", t('category.wedding'))
+
+
+const kindOfPicturesTranslate = t('categories');
+console.log("🚀 ~ kindOfPicturesTranslate:", kindOfPicturesTranslate)
+
+// type Category = 'portrait' | 'wedding' | 'macro' | 'kids';
+export const kindOfPictures = [
+    {
+        id: 1,
+        category: 'portrait',
+        image: portraitImg
+    },
+    {
+        id: 2,
+        category: 'wedding',
+        image: weddingImg
+    },
+    {
+        id: 3,
+        category: 'macro',
+        image: macroImg
+    },
+    {
+        id: 4,
+        category: 'kids',
+        image: kidsImg
+    },
+];
+
+---
+<Layout>
+	<div class="w-svw h-svh p-4 flex flex-col gap-5 box-border">
+        <Title  title={t('nav.gallery')}/>
+        <div class="grid grid-cols-2 gap-2 box-border89765">
+            {
+                kindOfPictures.map((kind, index) => {
+                    return (
+                        <a class="w-full h-[25svh] md:h-[40svh] lg:h-[50svh]" href={`/${lang}/gallery/${kind.category}`}>
+                            <div class="relative w-full h-full rounded-sm shadow-xl">
+                                <Image 
+                                    class={'object-cover w-full h-full'} 
+                                    src={kind.image} 
+                                    sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 800px"
+                                    alt="A description of my image." 
+                                />
+                                <div class="absolute  inset-0 bg-black-carbon/55"></div>
+                                <div class="absolute inset-0 w-full h-full flex flex-col justify-center items-center">
+                                    <h2 class="text-2xl text-slate-200">{ t('categories')[index].charAt(0).toUpperCase() + t('categories')[index].substring(1)}</h2>
+                                </div>
+                            </div>
+                        </a>
+                    );
+                })
+            }
+        </div>
+	</div>
+</Layout>
