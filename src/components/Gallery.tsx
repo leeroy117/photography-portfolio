@@ -2,6 +2,7 @@ import React from "react";
 import Lightbox from "yet-another-react-lightbox";
 import { RowsPhotoAlbum } from "react-photo-album";
 import "react-photo-album/rows.css";
+import { Fullscreen, Thumbnails, Zoom } from "yet-another-react-lightbox/plugins";
 
 interface Props {
     photos: any[];
@@ -26,6 +27,7 @@ function Gallery({ photos } : Props ) {
                 slides={photos}
                 open={index >= 0}
                 close={() => setIndex(-1)}
+                plugins={[Zoom]}
             />
         </>
      );

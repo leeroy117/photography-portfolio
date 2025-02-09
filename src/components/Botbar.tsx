@@ -45,14 +45,14 @@ function Botbar() {
         setRoutes(routes);
     }, [])
     
-    console.log("🚀 ~ Botbar ~ isVisible:", isVisible)
+    // console.log("🚀 ~ Botbar ~ isVisible:", isVisible)
     useEffect(() => {
         const handleScroll = () => {
         const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
         if (currentScrollTop > lastScrollTop) {
             // Si hace scroll hacia abajo
-            console.log('arriba');
+            // console.log('arriba');
             
             setIsVisible(false);
             // setTimeout(() => {
@@ -60,7 +60,7 @@ function Botbar() {
             // }, 3000)
         } else {
             // Si hace scroll hacia arriba
-            console.log('arriba2');
+            // console.log('arriba2');
             setIsVisible(true);
         }
 

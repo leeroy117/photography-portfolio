@@ -1,14 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Mansory from "../components/Mansory";
+import Gallery from '../components/Gallery';
+import { popularSlides } from '../slides';
 
-const images = [
-    {
-        id: 1,
-        src: '/img/IMG_8532_difuminado_smaller.jpg',
-        srcSet: "/img/IMG_8532_difuminado_smaller.jpg 400w, /img/IMG_8532_difuminado_small.jpg 600w, /img/IMG_8532_difuminado_medium.jpg 1200w, /img/IMG_8532_difuminado_large.jpg 1920w"
-    },
-];
 const {lang} = Astro.params;
 console.log("🚀 ~ lang:", lang)
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -16,7 +11,5 @@ console.log("🚀 ~ lang:", lang)
 ---
 <meta http-equiv="refresh" content="0;url=/en/" />
 <Layout>
-	<div class="w-svw h-svh p-4">
-		 <Mansory images={images} client:only="react"/>
-	</div>
+
 </Layout>
