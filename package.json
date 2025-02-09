@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev && astro preferences disable devToolbar",
+    "dev": "astro dev --host && astro preferences disable devToolbar ",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"

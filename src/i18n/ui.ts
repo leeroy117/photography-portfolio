@@ -36,6 +36,6 @@ export const languages = {
       'category.wedding': 'Boda',
       'category.macro': 'Macro',
       'category.kids': 'Niños',
-      'category.home': 'Bienvenido!',
+      'category.home': '¡Bienvenid@!',
     },
   } as const;
