@@ -1,68 +1,14 @@
 ---
-import { Image } from "astro:assets";
-import Mansory from "./Mansory";
+import { fade, slide } from 'astro:transitions';
 import Title from "./Title.astro";
-import p1 from '../assets/img/portrait/IMG_8532_difuminado_large.jpg';
-import p2 from '../assets/img/portrait/IMG_0786.jpg';
-import p3 from '../assets/img/portrait/IMG_0797.jpg';
-import p4 from '../assets/img/portrait/IMG_0809-Pano-Editar.jpg';
-import p5 from '../assets/img/portrait/IMG_0832.jpg';
-import p6 from '../assets/img/portrait/IMG_0839.jpg';
-import p7 from '../assets/img/portrait/IMG_0861.jpg';
+import Gallery from './Gallery';
+import {portraitSlides} from '../slides';
 
 ---
 <div class="p-4">
-    <Title title="Portrait" />
+    <Title transition:animate={slide({duration: '1s'})} title="Portrait" />
 
-    <!-- <Mansory images={images} client:only="react" /> -->
-     <div class="grid grid-cols-2 gap-3">
-        <Image 
-            class={'object-cover w-full h-full rounded-sm shadow-lg'} 
-            src={p1} 
-            sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 800px"
-            alt="A description of my image." 
-        />
-
-        <Image 
-            class={'object-cover w-full h-full rounded-sm shadow-lg'} 
-            src={p2} 
-            sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 800px"
-            alt="A description of my image." 
-        />
-
-        <Image 
-            class={'object-cover w-full h-full col-span-2 rounded-sm shadow-lg'} 
-            src={p3} 
-            sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 800px"
-            alt="A description of my image." 
-        />
-
-        <Image 
-            class={'object-cover w-full h-full rounded-sm shadow-lg'} 
-            src={p5} 
-            sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 800px"
-            alt="A description of my image." 
-        />
-
-        <Image 
-            class={'object-cover w-full h-full rounded-sm shadow-lg'} 
-            src={p6} 
-            sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 800px"
-            alt="A description of my image." 
-        />
-
-        <Image 
-            class={'object-cover w-full h-full col-span-2 rounded-sm shadow-lg'} 
-            src={p4} 
-            sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 800px"
-            alt="A description of my image." 
-        />
-
-        <Image 
-            class={'object-cover w-full h-full rounded-sm shadow-lg'} 
-            src={p7} 
-            sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 800px"
-            alt="A description of my image." 
-        />
+    <div transition:animate={fade({duration: '0.7s'})}>
+         <Gallery photos={portraitSlides} client:only="react" />
      </div>
 </div>

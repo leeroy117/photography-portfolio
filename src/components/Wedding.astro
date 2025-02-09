@@ -1,0 +1,12 @@
+---
+import Title from "./Title.astro";
+import Gallery from "./Gallery";
+import { weddingSlides } from "../slides";
+---
+<div class="p-4">
+    <Title  title="Wedding" />
+
+     <div >
+        <Gallery photos={weddingSlides} client:only="react" />
+     </div>
+</div>

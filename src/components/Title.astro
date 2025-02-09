@@ -1,6 +1,8 @@
 ---
+import { slide } from "astro:transitions";
+
 const {title} = Astro.props;
 ---
-<div class="w-full flex flex-row justify-center items-center">
-    <h1 class="text-deep-blue font-bold text-3xl">{title}</h1>
+<div transition:name="title" transition:animate={slide({duration: '0.6s'})} class="w-full flex flex-row justify-center items-center mb-4">
+    <h1 class="text-deep-blue font-bold text-4xl">{title}</h1>
 </div>

@@ -1,14 +1,13 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import { Image } from 'astro:assets';
-import portraitImg from '../../../assets/img/portrait/IMG_8532_difuminado_large.jpg';
-import kidsImg from '../../../assets/img/kids/IMG_9390-Editar_large.jpg';
-import macroImg from '../../../assets/img/macro/IMG_8550_edit.jpg';
-import weddingImg from '../../../assets/img/wedding/IMG_0292.jpg';
-// import macroImg from '../../../assets/img/macro/IMG_8550_edit - copia.jpg';
+import portraitImg from '../../../../public/img/portrait/IMG_8532_difuminado_large.jpg';
+import kidsImg from '../../../../public/img/kids/IMG_9390-Editar_large.jpg';
+import macroImg from '../../../../public/img/macro/IMG_8550_edit.jpg';
+import weddingImg from '../../../../public/img/wedding/IMG_0292.jpg';
 import Title from "../../../components/Title.astro";
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
-import { string } from "astro:schema";
+import { fade } from "astro:transitions";
 
 const lang = getLangFromUrl(Astro.url);
 console.log("🚀 ~ lang:", lang)
@@ -45,9 +44,9 @@ export const kindOfPictures = [
 
 ---
 <Layout>
-	<div class="w-svw h-svh p-4 flex flex-col gap-5 box-border">
+	<div transition:animate="slide" class="w-svw h-svh p-4 flex flex-col box-border">
         <Title  title={t('nav.gallery')}/>
-        <div class="grid grid-cols-2 gap-2 box-border89765">
+        <div class="grid grid-cols-2 gap-2 box-border" transition:animate={fade({duration: '0.7s'})} >
             {
                 kindOfPictures.map((kind, index) => {
                     return (
@@ -59,7 +58,7 @@ export const kindOfPictures = [
                                     sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 800px"
                                     alt="A description of my image." 
                                 />
-                                <div class="absolute  inset-0 bg-black-carbon/55"></div>
+                                <div class="absolute  inset-0 bg-black-carbon/70"></div>
                                 <div class="absolute inset-0 w-full h-full flex flex-col justify-center items-center">
                                     <h2 class="text-2xl text-slate-200">{ t('categories')[index].charAt(0).toUpperCase() + t('categories')[index].substring(1)}</h2>
                                 </div>
