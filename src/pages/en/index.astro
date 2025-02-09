@@ -3,12 +3,15 @@ import Layout from '../../layouts/Layout.astro';
 import Gallery from '../../components/Gallery';
 import { popularSlides } from '../../slides';
 import Title from '../../components/Title.astro';
-const lang = 'en';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+// const lang = 'en';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout lang={lang}>
     <div transition:animate="slide" class="w-svw h-svh p-4 flex flex-col box-border">
-        <Title title="Home" />
+        <Title title={t('category.home')}/>
         <div class="w-full h-svh">
             <Gallery photos={popularSlides} client:only="react" />
         </div>

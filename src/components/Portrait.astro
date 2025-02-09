@@ -3,10 +3,13 @@ import { fade, slide } from 'astro:transitions';
 import Title from "./Title.astro";
 import Gallery from './Gallery';
 import {portraitSlides} from '../slides';
-
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+console.log("🚀 ~ lang:", lang)
+const t = useTranslations(lang);
 ---
 <div class="p-4">
-    <Title transition:animate={slide({duration: '1s'})} title="Portrait" />
+    <Title title={t('category.portrait')} />
 
     <div transition:animate={fade({duration: '0.7s'})}>
          <Gallery photos={portraitSlides} client:only="react" />

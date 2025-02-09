@@ -20,6 +20,7 @@ export const languages = {
       'category.wedding': 'Wedding',
       'category.macro': 'Macro',
       'category.kids': 'Kids',
+      'category.home': 'Welcome!',
     },
     es: {
       'nav.home': 'Inicio',
@@ -35,5 +36,6 @@ export const languages = {
       'category.wedding': 'Boda',
       'category.macro': 'Macro',
       'category.kids': 'Niños',
+      'category.home': 'Bienvenido!',
     },
   } as const;

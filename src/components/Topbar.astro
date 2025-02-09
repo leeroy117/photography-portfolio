@@ -1,9 +1,6 @@
 ---
 const lang = Astro.url.pathname.includes("/en/") ? "en" : "es";
-console.log("🚀 ~ lang:sadas", lang)
 const switchLang = lang === "en" ? "es" : "en";
-console.log("🚀 ~ switchLang:", switchLang)
-// const newUrl = Astro.url.hostname + Astro.url.pathname.replace(`/${lang}/`, `/${switchLang}/`);
 ---
 
 

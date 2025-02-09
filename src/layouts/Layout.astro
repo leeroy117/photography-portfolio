@@ -8,7 +8,6 @@ const { lang } = Astro.props;
 console.log("🚀 ~ lang:", lang)
 import "yet-another-react-lightbox/styles.css";
 import Topbar from "../components/Topbar.astro";
-// import Topbar from "../components/Topbar";
 ---
 
 <!doctype html>
@@ -18,8 +17,8 @@ import Topbar from "../components/Topbar.astro";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-		<ClientRouter client:only/>
+		<title>Leeroy García</title>
+		<ClientRouter />
 	</head>
 	<body class="bg-black-carbon font-display">
 		<Topbar />
