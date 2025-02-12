@@ -4,8 +4,8 @@ const switchLang = lang === "en" ? "es" : "en";
 ---
 
 
-<div class="fixed top-0 w-full h-[8svh] flex flex-row justify-end items-center p-4 z-50">
-    <div class="relative hover:cursor-pointer">
+<div class="absolute top-0 w-full h-[8svh] flex flex-row justify-end items-center p-4 z-50">
+    <div class="relative hover:cursor-pointer drop-shadow-xl">
         <!-- <a href={`/${switchLang}/`}> -->
         <a href={Astro.url.pathname.replace(`/${lang}/`, `/${switchLang}/`)} >
             <svg

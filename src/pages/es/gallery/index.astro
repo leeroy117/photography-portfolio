@@ -1,22 +1,17 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import { Image } from 'astro:assets';
-import portraitImg from '../../../../public/img/portrait/IMG_8532_difuminado_large.jpg';
-import kidsImg from '../../../../public/img/kids/IMG_9390-Editar_large.jpg';
-import macroImg from '../../../../public/img/macro/IMG_8550_edit.jpg';
-import weddingImg from '../../../../public/img/wedding/IMG_0292.jpg';
+import portraitImg from '../../../../public/img/portrait/IMG_8532_difuminado_smaller.jpg';
+import kidsImg from '../../../../public/img/kids/IMG_9390-Editar_smaller.jpg';
+import macroImg from '../../../../public/img/macro/IMG_8550_edit_smaller.jpg';
+import weddingImg from '../../../../public/img/wedding/IMG_0292_smaller.jpg';
 import Title from "../../../components/Title.astro";
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 import { fade } from "astro:transitions";
 
 const lang = getLangFromUrl(Astro.url);
-console.log("🚀 ~ lang:", lang)
 const t = useTranslations(lang);
-console.log("🚀 ~ t:", t('category.wedding'))
 
-
-const kindOfPicturesTranslate = t('categories');
-console.log("🚀 ~ kindOfPicturesTranslate:", kindOfPicturesTranslate)
 
 export const kindOfPictures = [
     {
@@ -52,12 +47,12 @@ export const kindOfPictures = [
                         <a class="w-full h-[25svh] md:h-[40svh] lg:h-[50svh]" href={`/${lang}/gallery/${kind.category}`}>
                             <div class="relative w-full h-full rounded-sm shadow-xl">
                                 <Image 
-                                    class={'object-cover w-full h-full'} 
+                                    class={'object-cover w-full h-full rounded-md shadow-xl'} 
                                     src={kind.image} 
                                     sizes="(max-width: 600px) 300px, (max-width: 1024px) 600px, 800px"
                                     alt="A description of my image." 
                                 />
-                                <div class="absolute  inset-0 bg-black-carbon/70"></div>
+                                <div class="absolute  inset-0 bg-black-carbon/50"></div>
                                 <div class="absolute inset-0 w-full h-full flex flex-col justify-center items-center">
                                     <h2 class="text-2xl text-slate-200">{ t('categories')[index].charAt(0).toUpperCase() + t('categories')[index].substring(1)}</h2>
                                 </div>

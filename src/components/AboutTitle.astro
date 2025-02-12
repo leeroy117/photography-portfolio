@@ -1,0 +1,7 @@
+---
+// color and sizes of tailwind
+const { title, color, size } = Astro.props;
+---
+<div class="w-full flex flex-row justify-center items-center">
+    <h2 class={`${size} ${color}`}>{title}</h2>
+</div>

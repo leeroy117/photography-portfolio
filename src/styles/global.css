@@ -1,9 +1,18 @@
 @import "tailwindcss";
 
+@layer utilities {
+    .bg-gradient-custom {
+      background-image: linear-gradient(to top, #1a1a1a, #362d34, #5b4144, #7b594b, #8c7851);
+    }
+  }
+  
+
 @theme {
     --font-display: 'Poppins', 'sans-serif';
 
     --color-black-carbon: oklch(21.78% 0 0);
     --color-old-gold: oklch(58.17% 0.0602 83.55);
     --color-deep-blue: oklch(35.64% 0.0391 248.97);
+
+
 }
