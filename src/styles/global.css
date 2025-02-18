@@ -14,5 +14,6 @@
     --color-old-gold: oklch(58.17% 0.0602 83.55);
     --color-deep-blue: oklch(35.64% 0.0391 248.97);
 
+    --breakpoint-xs: 30rem;
 
 }

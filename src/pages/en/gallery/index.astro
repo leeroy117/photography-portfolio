@@ -8,6 +8,7 @@ import weddingImg from '../../../../public/img/wedding/IMG_0292_smaller.jpg';
 import Title from "../../../components/Title.astro";
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 import { fade } from "astro:transitions";
+import Wrapper from "../../../layouts/Wrapper.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -41,13 +42,14 @@ export const kindOfPictures = [
 
 ---
 <Layout>
-	<div transition:animate="slide" class="w-svw h-svh p-4 flex flex-col box-border">
+    <Wrapper>
+        <!-- <div transition:animate="slide" class="w-full h-svh p-4 lg:py-12 lg:px-32 flex flex-col box-border"> -->
         <Title  title={t('nav.gallery')}/>
-        <div class="grid grid-cols-2 gap-2 box-border" transition:animate={fade({duration: '0.7s'})} >
+        <div class="grid grid-cols-2 gap-2 box-border lg:px-32" transition:animate={fade({duration: '0.7s'})} >
             {
                 kindOfPictures.map((kind, index) => {
                     return (
-                        <a class="w-full h-[25svh] md:h-[40svh] lg:h-[50svh] rounded-md" href={`/${lang}/gallery/${kind.category}`}>
+                        <a class="w-full h-[25svh] md:h-[40svh] lg:h-[41svh] xl:h-[35svh] rounded-md" href={`/${lang}/gallery/${kind.category}`}>
                             <div class="relative w-full h-full rounded-md shadow-xl">
                                 <Image 
                                     class={'object-cover w-full h-full rounded-md'} 
@@ -57,7 +59,11 @@ export const kindOfPictures = [
                                 />
                                 <div class="absolute  inset-0 bg-black-carbon/50"></div>
                                 <div class="absolute inset-0 w-full h-full flex flex-col justify-center items-center">
-                                    <h2 class="text-2xl text-slate-200">{ t('categories')[index].charAt(0).toUpperCase() + t('categories')[index].substring(1)}</h2>
+                                    <h2 
+                                        class="text-2xl text-slate-200 md:text-4xl"
+                                    >
+                                        { t('categories')[index].charAt(0).toUpperCase() + t('categories')[index].substring(1)}
+                                    </h2>
                                 </div>
                             </div>
                         </a>
@@ -65,5 +71,6 @@ export const kindOfPictures = [
                 })
             }
         </div>
-	</div>
+        <!-- </div> -->
+    </Wrapper>
 </Layout>

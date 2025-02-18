@@ -3,11 +3,12 @@ import Botbar from "../components/Botbar";
 import "../styles/global.css"
 import '@fontsource/poppins';
 import { ClientRouter } from 'astro:transitions';
+import Navbar from '../components/Navbar';
+import "yet-another-react-lightbox/styles.css";
+import Topbar from "../components/Topbar.astro";
 
 const { lang } = Astro.props;
 console.log("🚀 ~ lang:", lang)
-import "yet-another-react-lightbox/styles.css";
-import Topbar from "../components/Topbar.astro";
 ---
 
 <!doctype html>
@@ -21,9 +22,12 @@ import Topbar from "../components/Topbar.astro";
 		<ClientRouter />
 	</head>
 	<body class="bg-black-carbon font-display">
+		<Navbar client:load/>
 		<Topbar />
 		<Botbar client:load />
-		<slot />
+		<div class=" lg:mt-12 box-border">
+			<slot />
+		</div>
 	</body>
 </html>
 

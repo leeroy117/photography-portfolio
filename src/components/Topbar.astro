@@ -1,10 +1,12 @@
 ---
 const lang = Astro.url.pathname.includes("/en/") ? "en" : "es";
+console.log("🚀 ~ lang:aaaaaaaaa", lang)
 const switchLang = lang === "en" ? "es" : "en";
+console.log("🚀 ~ switchLang:", switchLang)
 ---
 
 
-<div class="absolute top-0 w-full h-[8svh] flex flex-row justify-end items-center p-4 z-50">
+<div class="absolute top-0 w-full h-[8svh] flex flex-row justify-end items-center p-4 z-50 lg:top-13 lg:right-15 box-border">
     <div class="relative hover:cursor-pointer drop-shadow-xl">
         <!-- <a href={`/${switchLang}/`}> -->
         <a href={Astro.url.pathname.replace(`/${lang}/`, `/${switchLang}/`)} >

@@ -2,11 +2,14 @@
 import Title from "./Title.astro";
 import Gallery from "./Gallery";
 import { macroSlides } from "../slides";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
-<div class="p-4">
-    <Title  title="Wedding" />
+<div>
+    <Title  title={t('category.macro')} />
 
-     <div >
+     <div class="lg:w-1/4 " >
         <Gallery photos={macroSlides} client:only="react" />
      </div>
 </div>

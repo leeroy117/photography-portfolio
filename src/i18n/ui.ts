@@ -56,7 +56,7 @@ export const languages = {
       'category.portrait': 'Retrato',
       'category.wedding': 'Boda',
       'category.macro': 'Macro',
-      'category.kids': 'Niños',
+      'category.kids': 'Infantil',
       'category.home': '¡Bienvenid@!',
       'title.about': 'Acerca De',
       'title.gallery': 'Galeria',

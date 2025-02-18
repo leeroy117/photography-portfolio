@@ -5,6 +5,7 @@ import Kids from '../../../../components/Kids.astro';
 import Portrait from '../../../../components/Portrait.astro';
 import Wedding from '../../../../components/Wedding.astro';
 import Macro from '../../../../components/Macro.astro';
+import Wrapper from '../../../../layouts/Wrapper.astro';
 
 export function getStaticPaths() {
     const staticRoutes = kindOfPictures.map((kind) => ({
@@ -18,8 +19,12 @@ export function getStaticPaths() {
 const { category } = Astro.params;
 ---
 <Layout>
-    {(category == 'kids') ? <Kids />  : ''}
-    {(category == 'macro') ? <Macro /> : ''}
-    {(category == 'portrait') ? <Portrait /> : ''}
-    {(category == 'wedding') ? <Wedding /> : ''}
+    <Wrapper>
+        <div class="lg:px-12">
+            {(category == 'kids') ? <Kids />  : ''}
+            {(category == 'macro') ? <Macro /> : ''}
+            {(category == 'portrait') ? <Portrait /> : ''}
+            {(category == 'wedding') ? <Wedding /> : ''}
+        </div>
+    </Wrapper>
 </Layout>

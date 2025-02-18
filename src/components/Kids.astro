@@ -2,11 +2,12 @@
 import Title from "./Title.astro";
 import Gallery from "./Gallery";
 import { kidsSlides } from "../slides";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
-<div class="p-4">
-    <Title  title="Kids" />
 
-     <div >
-        <Gallery photos={kidsSlides} client:only="react" />
-     </div>
+<Title  title={t('category.kids')} />
+<div class="lg:px-20" >
+   <Gallery photos={kidsSlides} client:only="react" />
 </div>

@@ -15,7 +15,7 @@ interface IRoute {
 // ---
 
 
-function Botbar() {
+function Navbar() {
     const [isVisible, setIsVisible] = useState(true); // Estado para controlar la visibilidad del header
     const [lastScrollTop, setLastScrollTop] = useState(0); // Estado para guardar el último scroll
     const [routes, setRoutes] = useState<IRoute[]>([]);
@@ -63,11 +63,11 @@ function Botbar() {
     }, [lastScrollTop]); 
 
     return ( 
-    <div className={`fixed  ${isVisible ? 'bottom-0' : '-bottom-20'} 
+    <div className={`fixed max-lg:hidden ${isVisible ? 'top-0' : '-top-20'} 
         flex flex-row justify-center 
-        items-center w-svw p-4 z-10 
+        items-center w-svw p-4 px-20 z-10 
         bg-transparent transition-all 
-        lg:hidden
+        
         `}>
         
         <div className="w-full h-fit z-20 bg-old-gold/65 rounded-full shadow-md">
@@ -87,4 +87,4 @@ function Botbar() {
      );
 }
 
-export default Botbar;
+export default Navbar;Navbar
