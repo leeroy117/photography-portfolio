@@ -9,7 +9,7 @@ import Wrapper from '../../layouts/Wrapper.astro';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
-<Layout lang={lang} description="Fotografía">
+<Layout lang={lang} title="Fotografía">
     <Wrapper>
         <!-- <div transition:animate="slide" class="w-svw h-svh p-4 flex flex-col box-border"> -->
             <Title title={t('category.home')} />
