@@ -14,7 +14,7 @@ const t = useTranslations(lang);
         <!-- <div transition:animate="slide" class="w-svw h-svh p-4 flex flex-col box-border"> -->
             <Title title={t('category.home')} />
             <div class="w-full h-svh lg:px-20">
-                <Gallery photos={popularSlides} client:only="react" />
+                <Gallery photos={popularSlides} client:load />
             </div>
         <!-- </div> -->
     </Wrapper>

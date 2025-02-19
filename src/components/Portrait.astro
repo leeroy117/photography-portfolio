@@ -12,6 +12,6 @@ const t = useTranslations(lang);
     <Title title={t('category.portrait')} />
 
     <div transition:animate={fade({duration: '0.7s'})}>
-         <Gallery photos={portraitSlides} client:only="react" />
+         <Gallery photos={portraitSlides} client:load />
      </div>
 </div>

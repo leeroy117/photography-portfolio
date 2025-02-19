@@ -10,6 +10,6 @@ const t = useTranslations(lang);
     <Title  title={t('category.wedding')} />
 
      <div class="w-full lg:w-1/4 md:w-1/2">
-        <Gallery photos={weddingSlides} client:only="react" />
+        <Gallery photos={weddingSlides} client:load />
      </div>
 </div>

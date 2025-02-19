@@ -9,7 +9,7 @@ const t = useTranslations(lang);
 <div>
     <Title  title={t('category.macro')} />
 
-     <div class="lg:w-1/4 " >
-        <Gallery photos={macroSlides} client:only="react" />
+     <div class="lg:w-1/4" >
+        <Gallery photos={macroSlides} client:load />
      </div>
 </div>
