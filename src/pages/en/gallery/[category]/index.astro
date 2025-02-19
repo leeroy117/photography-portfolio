@@ -17,8 +17,31 @@ export function getStaticPaths() {
 }
 
 const { category } = Astro.params;
+
+let title = "";
+switch (category) {
+    case 'kids':
+        title = "Kids Photography"
+        break;
+
+    case 'macro':
+        title = "Macro Photography"
+        break;
+        
+    case 'wedding':
+        title = "Wedding Photography"
+        break;
+
+    case 'portrait':
+        title = "Portrait Photography"
+        break;
+
+    default:
+        title = ""
+        break;
+}
 ---
-<Layout>
+<Layout description={title}>
     <Wrapper>
         <div class="lg:px-12">
             {(category == 'kids') ? <Kids />  : ''}

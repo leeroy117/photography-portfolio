@@ -7,7 +7,7 @@ import Layout from "../../../layouts/Layout.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
-<Layout>
+<Layout description="Acerca de mi">
     <div transition:animate="slide" class="w-svw h-svh p-4 flex flex-col box-border text-slate-300">
         <Title  title={t('title.about')}/>
 

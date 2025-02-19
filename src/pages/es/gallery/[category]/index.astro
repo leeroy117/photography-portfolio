@@ -17,6 +17,28 @@ export function getStaticPaths() {
 }
 
 const { category } = Astro.params;
+let title = '';
+switch (category) {
+    case 'kids':
+        title = "Fotografía Infantil"
+        break;
+
+    case 'macro':
+        title = "Fotografía Macro"
+        break;
+        
+    case 'wedding':
+        title = "Fotografía de Bodas"
+        break;
+
+    case 'portrait':
+        title = "Fotografía de Retrato"
+        break;
+
+    default:
+        title = ""
+        break;
+}
 ---
 <Layout>
     <Wrapper>

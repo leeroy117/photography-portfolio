@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar';
 import "yet-another-react-lightbox/styles.css";
 import Topbar from "../components/Topbar.astro";
 
-const { lang } = Astro.props;
+const { lang, title } = Astro.props;
 console.log("🚀 ~ lang:", lang)
 ---
 
@@ -21,7 +21,7 @@ console.log("🚀 ~ lang:", lang)
 		<title>Leeroy García | Photography </title>
 
 		 <!-- Open Graph (Facebook, LinkedIn) -->
-		 <meta property="og:title" content="Photography" />
+		 <meta property="og:title" content={`Leeroy Garcia | ${title}`} />
 		 <meta property="og:description" content="Cada foto es una conexión, una historia y una memoria que perdura." />
 		 <meta property="og:image" content="/img/portrait/IMG_8532_difuminado_smaller.jpg" />
 		 <meta property="og:url" content="https://leeroygarcia.photography" />
